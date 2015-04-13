@@ -12,18 +12,18 @@ gulp.task('default', ['js', 'css', 'html'], function () {
 gulp.task('js', function () {
   gulp.src('www/js/**/*.js')
       .pipe(uglify())
-      .pipe(gulp.dest('www/modules'));
+      .pipe(gulp.dest('www/js'));
 });
 
 gulp.task('css', function () {
   gulp.src('www/css/**/*.css')
       .pipe(minifycss({keepBreaks: true}))
-      .pipe(gulp.dest('www/modules'))
+      .pipe(gulp.dest('www/css'))
 });
 
 
 gulp.task('html', function () {
   gulp.src('www/templates/**/*.html')
       .pipe(htmlmin({collapseWhitespace: true}))
-      .pipe(gulp.dest('www/modules'));
+      .pipe(gulp.dest('www/templates'));
 });
