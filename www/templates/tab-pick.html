@@ -1,0 +1,33 @@
+<ion-view view-title="请选择喜欢的颜色">
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-divider">
+                当前的颜色：
+            </div>
+            <div class="item item-text-wrap">
+                <div class="row">
+                    <div class="col col-25">
+                        <color-point  color="{{data.currentColor}}"></color-point>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">
+                您选过的颜色：
+            </div>
+            <div class="item item-text-wrap">
+                <div class="row repeatAnimate" ng-repeat="row in data.colorList | repeatFilter:4">
+                    <div class="col col-25" ng-repeat="item in row">
+                        <color-point  color="{{item}}" ></color-point>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="ion-plus addColorBtn" ng-click="selectColor()">
+        </button>
+    </ion-content>
+
+</ion-view>
